@@ -1,0 +1,28 @@
+<div>
+<!-- Navigator list, items in reverse-->
+<ul id='my-main-nav'>
+    <li [routerLinkActive]="['link-active']">
+        <a [routerLink]="['/programs']">
+            <span class='glyphicon glyphicon-wrench'></span> Programs
+        </a>
+    </li>       
+    <li [routerLinkActive]="['link-active']">
+        <a [routerLink]="['/contact']">
+            <span class='glyphicon glyphicon-earphone'></span> Contact
+        </a>
+    </li>
+    <li [routerLinkActive]="['link-active']">
+        <a href="https://s3.us-east-2.amazonaws.com/jman31415926/programming_res.pdf">
+            <span class='glyphicon glyphicon-list-alt'></span> Resume
+        </a>
+    </li>
+    <li [routerLinkActive]="['link-active']">
+        <a [routerLink]="['/home']">
+            <span class='glyphicon glyphicon-home'></span> Home
+        </a>
+    </li>
+    <li [routerLinkActive]="['link-active']" style="float: left; ">
+            <a [routerLink]="['/home']">Jaime Varela</a>
+    </li>    
+</ul>
+</div>

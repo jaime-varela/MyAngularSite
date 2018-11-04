@@ -1,0 +1,60 @@
+<h1 style="text-align: center">Programs</h1>
+
+<br> 
+<div class="text-justify" style="padding: 30px;">
+<p>Here, we list the available programs you can run live.  
+    This collection is mainly of random computational programs I wanted to 
+have running live as well as things I have found useful.</p>
+
+<p>Many of the programs above will output large numbers. If you want be able to speak the number, consider using this <a href="https://play.google.com/store/apps/details?id=com.dahak.wordstonumbers">app</a> if the number is below a google.</p>
+
+
+<p>Some of the programs deal with time dilation, if you want to look into time dilation further you can check out this <a href="https://play.google.com/store/apps/details?id=com.dahak.sci_fitraveler">app</a> which also examines the time dilation effects of an accelerating space ship.</p>
+
+<p>Note: in order to lessen server loads, I have placed certain limits on the input parameters (for example you can't go beyond 50000 for Factorial).  I plan to put more programs here when I get the time. If you have an idea on what I should put on here, feel free to e-mail me.</p>
+</div>
+
+<br>
+<div class="box-header with-border">  
+    <div class="form-group voffset row">  
+        <label for="" class="vertical-label col-sm-4 col-md-8 text-right"> Math and Science Programs.</label>  
+        <div class="col-sm-8 col-md-4">  
+            <select id="Id" [(ngModel)]="selectedOption" class="hideLabel form-control" name="Id" (change)="loadForm()">  
+                    <option selected="" value="">Select a program</option>  
+                 <option [ngValue]="k" *ngFor="let k of ApiNames">  
+                     {{k}}  
+              </option>  
+         </select>  
+        </div>  
+    </div>  
+</div>
+
+
+<div *ngIf="currentProgram.name">
+    <div>
+    <h2 style="text-align: center;">{{currentProgram.name}}</h2>
+    <p style="padding: 30px">{{currentProgram.description}}<p>
+    </div>
+
+    <div style="padding-left: 15px; padding-right: 15px;">
+        <form (ngSubmit)="makeApiCall()">
+            <div class="form-group" *ngFor="let pname of currentProgram.paramNames">
+              <label for="{{pname}}">{{pname}}</label>
+              <input type="text" class="form-control" id="{{pname}}">
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-dark">Submit</button>
+<!--            <input type="submit" value="Submit">-->
+            <br>
+        </form>
+    </div>
+
+    <br>
+
+    <div>
+        <p class="text-justify" style="word-wrap: break-word;">{{RESULT}}</p>
+    </div>
+</div>
+
+<br>

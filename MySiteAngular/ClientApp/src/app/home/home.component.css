@@ -1,0 +1,10 @@
+#profile_pic{
+    
+    width:25%;
+    height:25%;
+    border-radius: 50%;
+    margin-left:15px;
+    float: left;
+    margin-right: 15px;
+    max-width: 350px;
+}
