@@ -21,4 +21,5 @@ EXPOSE 5000
 COPY published ./
 
 # set the entrypoint of the application
+ENV ASPNETCORE_ENVIRONMENT=Production
 ENTRYPOINT ["dotnet", "MySiteAngular.dll"] 
